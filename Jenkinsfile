@@ -19,27 +19,26 @@ node {
       sh "echo deploy to CI"
    }
 
-   stage ("Approve To QA") {
-          input message: "Proceed?"
-    }
+  // stage ("Approve To QA") {
+  //        input message: "Proceed?"
+  //  }
 
    stage('Deploy to QA') {
       sh "echo deploy to QA"
    }
 
-   stage ("Approve To PROD") {
-          input message: "Proceed?"
-    }
+  // stage ("Approve To PROD") {
+  //        input message: "Proceed?"
+  //  }
 
    stage('Deploy to PROD') {
-     withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'customer-demo',
-                             usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+     withCredentials([string(credentialsId: 'devuserkey', variable: 'AUTHKEY')]) {
                  //available as an env variable, but will be masked if you try to print it out any which way
           sh "echo deploy to PROD"
           sh 'prana auth logout'
           sh 'echo successfully logged out'
 
-          sh "prana auth login --username=${env.USERNAME} --password=${env.PASSWORD} --account=demo-inc"
+          sh "prana auth set_token ${env.AUTHKEY}"
           sh 'echo successfully logged in'
 
           sh "prana config set organization=demo-inc -g"
@@ -56,14 +55,14 @@ node {
           sh "prana design commit init-commit"
           sh 'echo new design in committed with message init-commit'
 
-          sh "prana transition pull -e production"
+          sh "prana configure pull -e production"
           sh 'echo design pull to production appspace'
 
           sh 'sleep 20'
 
-          sh "prana transition commit init-commit -e production"
+          sh "prana configure commit init-commit -e production"
 
-          sh "prana transition deployment create -e production"
+          sh "prana configure deployment create -e production"
           sh 'echo deployement is started'
        }
    }
