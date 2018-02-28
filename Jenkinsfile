@@ -62,6 +62,8 @@ node {
 
           sh "prana configure commit init-commit -e production"
 
+          sh 'sleep 20'
+          
           sh "prana configure deployment create -e production"
           sh 'echo deployement is started'
        }
