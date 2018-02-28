@@ -1,6 +1,6 @@
 node {
    stage('Build') {
-         git 'https://github.com/veereshwaran/front-end/'
+         git 'https://github.com/appranix-demo/front-end.git'
          sh "echo build docker"
          sh "docker build -t veeresh27/front-end:${env.BUILD_ID} ."
    }
