@@ -1,0 +1,61 @@
+---
+platforms:
+  front-end:
+    components:
+      app/core.1.Container-app:
+        app:
+          deployment_yaml: |
+                      apiVersion: extensions/v1beta1
+                      kind: Deployment
+                      metadata:
+                        name: front-end
+                      spec:
+                        replicas: 1
+                        template:
+                          metadata:
+                            labels:
+                              name: front-end
+                          spec:
+                            containers:
+                            - name: front-end
+                              image: veeresh27/front-end:$AX_LOCAL{version}
+                              resources:
+                                requests:
+                                  cpu: 100m
+                                  memory: 100Mi
+                              ports:
+                              - containerPort: 8079
+                              securityContext:
+                                runAsNonRoot: true
+                                runAsUser: 10001
+                                capabilities:
+                                  drop:
+                                    - all
+                                readOnlyRootFilesystem: true
+                            nodeSelector:
+                              beta.kubernetes.io/os: linux
+                      ---
+                      apiVersion: v1
+                      kind: Service
+                      metadata:
+                        name: front-end
+                        labels:
+                          name: front-end
+                      spec:
+                        type: NodePort
+                        ports:
+                        - port: 80
+                          targetPort: 8079
+                          nodePort: 30001
+                        selector:
+                          name: front-end
+    major_version: "1"
+    pack: "core/kubernetes-app:1"
+    variables:
+      version: "23"
+    links:
+      - payment
+      - catalogue
+      - orders
+      - carts
+      - user
