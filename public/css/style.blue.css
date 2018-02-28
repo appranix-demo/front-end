@@ -19,7 +19,7 @@ h1 {
   font-size: 40px;
 }
 #top {
-  background: #555555;
+  background: #009688;
   padding: 10px 0;
 }
 #top .offer {
@@ -1270,7 +1270,7 @@ h1 {
 .navbar-default .navbar-nav > .active > a:focus {
   color: #555555;
   /* change the color of the active tab for the front-end UI  */
-  background-color: #4993e4;*/ /* green 
+  background-color: #4993e4;*/ /* green
   /*background-color: #49e45b; /* green */*/
 }
 .navbar-default .navbar-nav > .disabled > a,
