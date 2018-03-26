@@ -68,4 +68,4 @@ node {
 //          sh 'echo deployement is started'
 //       }
 //   }
-//}
+}
