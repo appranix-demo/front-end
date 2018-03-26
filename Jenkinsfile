@@ -15,57 +15,57 @@ node {
         }
    }
 
-   stage('Deploy to CI') {
-      sh "echo deploy to CI"
-   }
+//   stage('Deploy to CI') {
+//      sh "echo deploy to CI"
+//   }
 
   // stage ("Approve To QA") {
   //        input message: "Proceed?"
   //  }
 
-   stage('Deploy to QA') {
-      sh "echo deploy to QA"
-   }
+//   stage('Deploy to QA') {
+//      sh "echo deploy to QA"
+//   }
 
   // stage ("Approve To PROD") {
   //        input message: "Proceed?"
   //  }
 
-   stage('Deploy to PROD') {
-     withCredentials([string(credentialsId: 'devuserkey', variable: 'AUTHKEY')]) {
-                 //available as an env variable, but will be masked if you try to print it out any which way
-          sh "echo deploy to PROD"
-          sh 'prana auth logout'
-          sh 'echo successfully logged out'
-
-          sh "prana auth set_token ${env.AUTHKEY}"
-          sh 'echo successfully logged in'
-
-          sh "prana config set organization=demo-inc -g"
-          sh 'echo organization is set as demo-inc'
-
-          sh "prana config set assembly=sockshop -g"
-          sh 'echo assembly is set as sockshop'
-
-          sh "prana design load front-end.yml"
-          sh 'echo design is uploaded'
-
-          sh "prana design variable update -a sockshop --platform=front-end version=${env.BUILD_ID}"
-
-          sh "prana design commit init-commit"
-          sh 'echo new design in committed with message init-commit'
-
-          sh "prana configure pull -e production"
-          sh 'echo design pull to production appspace'
-
-          sh 'sleep 20'
-
-          sh "prana configure commit init-commit -e production"
-
-          sh 'sleep 20'
-          
-          sh "prana configure deployment create -e production"
-          sh 'echo deployement is started'
-       }
-   }
-}
+//   stage('Deploy to PROD') {
+//     withCredentials([string(credentialsId: 'devuserkey', variable: 'AUTHKEY')]) {
+//                 //available as an env variable, but will be masked if you try to print it out any which way
+//          sh "echo deploy to PROD"
+//          sh 'prana auth logout'
+//          sh 'echo successfully logged out'
+//
+//          sh "prana auth set_token ${env.AUTHKEY}"
+//          sh 'echo successfully logged in'
+//
+//          sh "prana config set organization=demo-inc -g"
+//          sh 'echo organization is set as demo-inc'
+//
+//          sh "prana config set assembly=appranixshop -g"
+//          sh 'echo assembly is set as sockshop'
+//
+//          sh "prana design load front-end.yml"
+//          sh 'echo design is uploaded'
+//
+//          sh "prana design variable update -a sockshop --platform=front-end version=${env.BUILD_ID}"
+//
+//          sh "prana design commit init-commit"
+//          sh 'echo new design in committed with message init-commit'
+//
+//          sh "prana configure pull -e appranixshop"
+//          sh 'echo design pull to appranixshop environment'
+//
+//          sh 'sleep 20'
+//
+//          sh "prana configure commit init-commit -e appranixshop"
+//
+//          sh 'sleep 20'
+//
+//          sh "prana configure deployment create -e appranixshop"
+//          sh 'echo deployement is started'
+//       }
+//   }
+//}
