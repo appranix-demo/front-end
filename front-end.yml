@@ -18,7 +18,7 @@ platforms:
                           spec:
                             containers:
                             - name: front-end
-                              image: veeresh27/front-end:$AX_LOCAL{version}
+                              image: veeresh27/front-end:$version
                               resources:
                                 requests:
                                   cpu: 100m
