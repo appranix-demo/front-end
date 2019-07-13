@@ -5,11 +5,11 @@ echo "Authenticating"
 codeship_google authenticate
 
 # gcloud default values
-gcloud config set compute/zone us-east4-a
-gcloud config set project project--3443695228107877164
+gcloud config set compute/zone us-central1-a
+gcloud config set project appranix-managed-dev-01
 
 # connect to the cluster running the app
-gcloud container clusters get-credentials appranix-prod-cluster --zone us-central1-a --project project--3443695228107877164
+gcloud container clusters get-credentials qa-cps-test-cluster --zone us-central1-a --project appranix-managed-dev-01
 
 # Deploying the image
 kubectl -n sock-shop set image deployment/front-end front-end=gcr.io/appranix-public-cr/sock-shop/front-end:ax-shop
