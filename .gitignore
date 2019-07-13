@@ -5,3 +5,7 @@
 /coverage
 
 .idea
+
+# Ignore sensitive keys
+google-credentials
+codeship.aes

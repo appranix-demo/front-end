@@ -1,0 +1,22 @@
+# Copyright (c) 2019, Appranix, Inc.
+# All Rights Reserved.
+
+---
+front-end:
+  build:
+    image: appranix/front-end
+    dockerfile: Dockerfile
+
+gcr_dockercfg:
+  image: codeship/gcr-dockercfg-generator
+  add_docker: true
+  encrypted_env_file:
+    - google-credentials.encrypted
+
+googleclouddeployment:
+  image: codeship/google-cloud-deployment
+  encrypted_env_file:
+    - google-credentials.encrypted
+  add_docker: true
+  volumes:
+    - ./:/deploy
