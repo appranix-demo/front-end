@@ -9,7 +9,7 @@ gcloud config set compute/zone us-east4-a
 gcloud config set project project--3443695228107877164
 
 # connect to the cluster running the app
-gcloud container clusters get-credentials apnx-zonal-test-cluster --zone us-east4-a --project project--3443695228107877164
+gcloud container clusters get-credentials appranix-prod-cluster --zone us-central1-a --project project--3443695228107877164
 
 # Deploying the image
 kubectl -n sock-shop set image deployment/front-end front-end=gcr.io/appranix-public-cr/sock-shop/front-end:ax-shop
