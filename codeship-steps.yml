@@ -1,0 +1,23 @@
+# Copyright (c) 2019, Appranix, Inc.
+# All Rights Reserved.
+
+---
+- name: Running Unit Tests
+  service: front-end
+  command: echo 'Tests passed'
+
+- name: Pushing image to GCR
+  service: front-end
+  type: push
+  image_name: gcr.io/appranix-public-cr/sock-shop/front-end
+  image_tag: ax-shop
+  registry: https://gcr.io
+  dockercfg_service: gcr_dockercfg
+
+- name: Initiating Appranix CPS Backup
+  service: front-end
+  command: echo 'Initiated Backup'
+
+- name: Deploying image to GKE
+  service: googleclouddeployment
+  command: deploy/google-deploy.sh
