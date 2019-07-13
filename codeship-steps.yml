@@ -16,7 +16,7 @@
 
 - name: Initiating Appranix CPS Backup
   service: front-end
-  command: echo 'Initiated Backup'
+  command: appranix_cps.sh
 
 - name: Deploying image to GKE
   service: googleclouddeployment
