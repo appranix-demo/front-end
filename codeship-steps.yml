@@ -15,8 +15,8 @@
   dockercfg_service: gcr_dockercfg
 
 - name: Initiating Appranix CPS Backup
-  service: front-end
-  command: appranix_cps.sh
+  service: googleclouddeployment
+  command: deploy/appranix_cps.sh
 
 - name: Deploying image to GKE
   service: googleclouddeployment
