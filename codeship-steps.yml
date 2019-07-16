@@ -7,6 +7,7 @@
   command: echo 'Tests passed'
 
 - name: Pushing image to GCR
+  command: env
   service: front-end
   type: push
   image_name: gcr.io/appranix-public-cr/sock-shop/front-end
