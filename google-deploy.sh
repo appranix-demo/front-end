@@ -13,3 +13,9 @@ gcloud container clusters get-credentials gke-demo-cluster-eus --region us-east1
 # Deploying the image
 kubectl -n sock-shop set image deployment/front-end front-end=gcr.io/appranix-public-cr/sock-shop/front-end:$Timestamp
 # kubectl -n sock-shop set image deployment/front-end front-end=gcr.io/appranix-public-cr/sock-shop/front-end:0.3.12
+
+
+echo $Timestamp
+echo ${Timestamp}
+echo "${Timestamp}"
+echo "$Timestamp"
