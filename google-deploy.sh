@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Use the codeship_gce_service to authenticate
-echo "Authenticating"
+echo 'Authenticating'
 codeship_google authenticate
 
 # gcloud default values
