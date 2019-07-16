@@ -10,7 +10,9 @@
   service: front-end
   type: push
   image_name: gcr.io/appranix-public-cr/sock-shop/front-end
-  image_tag: ax-shop
+  image_tag:
+    - "{{ Timestamp }}"
+    - latest
   registry: https://gcr.io
   dockercfg_service: gcr_dockercfg
 
