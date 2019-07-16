@@ -11,5 +11,5 @@ gcloud config set project appranix-managed-dev-01
 gcloud container clusters get-credentials gke-demo-cluster-eus --region us-east1 --project appranix-managed-dev-01
 
 # Deploying the image
-kubectl -n sock-shop set image deployment/front-end front-end=gcr.io/appranix-public-cr/sock-shop/front-end:ax-shops
+kubectl -n sock-shop set image deployment/front-end front-end=gcr.io/appranix-public-cr/sock-shop/front-end:ax-shop
 # kubectl -n sock-shop set image deployment/front-end front-end=gcr.io/appranix-public-cr/sock-shop/front-end:0.3.12

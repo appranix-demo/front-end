@@ -10,7 +10,7 @@
   service: front-end
   type: push
   image_name: gcr.io/appranix-public-cr/sock-shop/front-end
-  image_tag: ax-shops
+  image_tag: ax-shop
   registry: https://gcr.io
   dockercfg_service: gcr_dockercfg
 
