@@ -4,7 +4,7 @@
 ---
 - name: Running Unit Tests
   service: front-end
-  command: echo 'Tests passed'
+  command: env
 
 - name: Pushing image to GCR
   service: front-end

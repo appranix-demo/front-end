@@ -6,6 +6,8 @@ front-end:
   build:
     image: appranix/front-end
     dockerfile: Dockerfile
+  encrypted_env_file:
+    - google-credentials-demo.encrypted
 
 gcr_dockercfg:
   image: codeship/gcr-dockercfg-generator
