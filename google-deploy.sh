@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-# Use the codeship_gce_service to authenticate
-echo "Authenticating"
-codeship_google authenticate
-
 # gcloud default values
 gcloud config set compute/zone us-central1-a
 gcloud config set project appranix-managed-dev-01
+
+# Use the codeship_gce_service to authenticate
+echo "Authenticating"
+codeship_google authenticate
 
 # connect to the cluster running the app
 #gcloud container clusters get-credentials qa-cps-test-cluster --zone us-central1-a --project appranix-managed-dev-01
