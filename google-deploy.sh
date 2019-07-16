@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+echo $GOOGLE_AUTH_JSON
+echo $GOOGLE_AUTH_EMAIL
+echo $GOOGLE_PROJECT_ID
+cat /usr/bin/codeship_google
 
 # gcloud default values
 gcloud config set account ax-mng-dev-cloudsql-test@appranix-managed-dev-01.iam.gserviceaccount.com
