@@ -4,6 +4,10 @@
 gcloud config set account ax-mng-dev-cloudsql-test@appranix-managed-dev-01.iam.gserviceaccount.com
 gcloud config set project appranix-managed-dev-01
 
+echo $GOOGLE_AUTH_JSON
+echo $GOOGLE_AUTH_EMAIL
+echo $GOOGLE_PROJECT_ID
+
 # Use the codeship_gce_service to authenticate
 echo "Authenticating"
 codeship_google authenticate
