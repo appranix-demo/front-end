@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # gcloud default values
-gcloud config set compute/zone us-central1-a
+gcloud config set account ax-mng-dev-cloudsql-test@appranix-managed-dev-01.iam.gserviceaccount.com
 gcloud config set project appranix-managed-dev-01
 
 # Use the codeship_gce_service to authenticate
