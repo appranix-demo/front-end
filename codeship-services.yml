@@ -11,7 +11,7 @@ gcr_dockercfg:
   image: codeship/gcr-dockercfg-generator
   add_docker: true
   encrypted_env_file:
-    - google-credentials-mngdev.encrypted
+    - google-credentials-demo.encrypted
 
 googleclouddeployment:
   image: codeship/google-cloud-deployment
