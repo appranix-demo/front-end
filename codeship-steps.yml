@@ -14,7 +14,7 @@
   registry: https://gcr.io
   dockercfg_service: gcr_dockercfg
 
-- name: Initiating Appranix CPS Backup
+- name: Initiating Appranix App Resilience
   service: googleclouddeployment
   command: deploy/appranix_cps.sh
 
