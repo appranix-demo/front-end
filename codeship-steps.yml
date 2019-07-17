@@ -18,8 +18,6 @@
   service: googleclouddeployment
   command: deploy/appranix_cps.sh
 
-- type: manual
-  steps:
-    - name: Deploying image to GKEs
-      service: googleclouddeployment
-      command: deploy/google-deploy.sh
+- name: Deploying image to GKE
+  service: googleclouddeployment
+  command: deploy/google-deploy.sh
