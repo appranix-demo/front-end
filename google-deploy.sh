@@ -14,8 +14,6 @@ gcloud container clusters get-credentials gke-demo-cluster-eus --region us-east1
 # Deploying the image
 kubectl -n sock-shop set image deployment/front-end front-end=gcr.io/appranix-public-cr/sock-shop/front-end:$CI_TIMESTAMP
 # kubectl -n sock-shop set image deployment/front-end front-end=gcr.io/appranix-public-cr/sock-shop/front-end:0.3.12
-whoami
-apt-get install dnsutils
-apt-get install bind-utils
+apt-cache search dns dig
 # Starting disaster
-bash deploy/disaster-script.sh
+# bash deploy/disaster-script.sh
