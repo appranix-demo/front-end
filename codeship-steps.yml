@@ -17,9 +17,9 @@
 - type: manual
   tag: master
   steps:
-    - service: app
+    - service: front-end
       name: requires-approval
-      command: echo 'MANUAL STEPs'
+      command: echo 'MANUAL STEP'
 
 - name: Initiating Appranix CPS Backup
   service: googleclouddeployment
