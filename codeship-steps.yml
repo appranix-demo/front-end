@@ -19,7 +19,7 @@
   steps:
     - service: app
       name: requires-approval
-      command: echo 'MANUAL STEP'
+      command: echo 'MANUAL STEPs'
 
 - name: Initiating Appranix CPS Backup
   service: googleclouddeployment
