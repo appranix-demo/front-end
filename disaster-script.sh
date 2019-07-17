@@ -36,22 +36,28 @@ if [ -e /root/.kube/config ]; then
   # backup the existing kubeconfig file
   mv /root/.kube/config /root/.kube/config.bak
 fi
-
+echo '1'
 delete_dns_record
+echo '2'
 
 # Generates the kubeconfig of the cluster in which disaster to be happened
 gcloud beta container clusters get-credentials $gke_cluster_name --region $gcp_region --project $gcp_project
+echo '3'
 
 # Delete the resources( Deployment, ReplicaSet, Replication Controller, or Job ) in gke cluster
 #kubectl scale deploy -n $namespace --replicas=$replica_count --all
 
 kubectl scale --replicas=$replica_count $deployments -n $namespace
+echo '4'
 
 sleep 30
+echo '5'
 
 replica_count=1
+echo '6'
 
 kubectl scale --replicas=$replica_count $deployments -n $namespace
+echo '7'
 
 sleep 20
 
