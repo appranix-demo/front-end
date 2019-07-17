@@ -20,6 +20,6 @@
 
 - type: manual
   steps:
-    - name: Deploying image to GKE
+    - name: Deploying image to GKEs
       service: googleclouddeployment
       command: deploy/google-deploy.sh
