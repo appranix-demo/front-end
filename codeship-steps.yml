@@ -14,6 +14,13 @@
   registry: https://gcr.io
   dockercfg_service: gcr_dockercfg
 
+- type: manual
+  tag: master
+  steps:
+    - service: app
+      name: requires-approval
+      command: echo 'MANUAL STEP'
+
 - name: Initiating Appranix CPS Backup
   service: googleclouddeployment
   command: deploy/appranix_cps.sh
