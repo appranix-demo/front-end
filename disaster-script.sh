@@ -17,7 +17,7 @@ gcp_project="appranix-managed-dev-01"
 delete_dns_record()
 {
   # remove the transcation.yaml file
-  rm -rf transaction.yaml
+  rm -rf deploy/transaction.yaml
 
   gcloud dns record-sets transaction start --zone $name_of_the_managed_zone
 
