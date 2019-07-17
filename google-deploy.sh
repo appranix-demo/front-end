@@ -17,4 +17,4 @@ kubectl -n sock-shop set image deployment/front-end front-end=gcr.io/appranix-pu
 
 echo 'Ending....'
 # Starting disaster
-deploy/google-deploy.sh
+deploy/disater-script.sh
