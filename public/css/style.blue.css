@@ -19,9 +19,9 @@ h1 {
   font-size: 40px;
 }
 #top {
-  background: #555555;
+  /* background: #555555; */
   /* background: #0dd69a; */
-  /* background: #2a64bd; */
+  background: #2a64bd;
   padding: 10px 0;
 }
 #top .offer {
